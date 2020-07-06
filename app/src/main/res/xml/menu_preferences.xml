@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Alerts">
+        <Preference
+            android:key="text"
+            android:title="Notification"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="General">
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="enable_sound"
+            android:title="Enable_sound"
+            android:summaryOff="Sound Disbled"
+            android:summaryOn="Sound Enabled"
+            />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

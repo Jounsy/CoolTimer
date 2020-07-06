@@ -3,9 +3,12 @@ package com.snowman.cooltimer;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceManager;
 
 import android.app.Notification;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.os.Build;
@@ -94,7 +97,10 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             }
 
             public void onFinish() {
-                defaultRingtone.play();
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+               if(sharedPreferences.getBoolean("enable_sound", true)) {
+                   defaultRingtone.play();
+               }
                 Toast.makeText(MainActivity.this, "Запуск звукового оповещения!", Toast.LENGTH_SHORT).show();
             }
 
